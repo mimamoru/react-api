@@ -5,8 +5,8 @@ const myTagsPath = "http://localhost:3001/mytags";
 const myStockTPath = "http://localhost:3001/mystockT";
 const myStockQPath = "http://localhost:3001/mystockQ";
 
-const token1 = "5fa6a260ae7b12113eecefa37ac32a972bedc288";
-const token2 = "e24cb72ab96bb0f5f108a610650321e9ded13989";
+const token1 = "";
+const token2 = "";
 
 //axios.defaults.withCredentials = true;
 
