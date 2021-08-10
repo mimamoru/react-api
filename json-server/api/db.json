@@ -1,0 +1,296 @@
+{
+  "mytags": [
+    {
+      "id": "オブジェクト指向",
+      "recordDate": "2021-8-9 9:22:17"
+    },
+    {
+      "id": "Java",
+      "recordDate": "2021-8-9 9:22:17"
+    },
+    {
+      "id": "オートコンプリート",
+      "recordDate": "2021-8-9 14:0:16"
+    },
+    {
+      "id": "JavaScript",
+      "recordDate": "2021-8-9 14:48:32"
+    },
+    {
+      "id": "React.js",
+      "recordDate": "2021-8-9 14:48:32"
+    }
+  ],
+  "mystockT": [
+    {
+      "id": "353393",
+      "title": "CodePenで特定の動作の時のみ背景色を変えるには",
+      "tags": [
+        "CSS",
+        "HTML",
+        "JavaScript"
+      ],
+      "recordDate": "2021-8-9 9:22:17"
+    },
+    {
+      "id": "353408",
+      "title": "JavaScript パーセントの計算式",
+      "tags": [
+        "JavaScript"
+      ],
+      "recordDate": "2021-8-9 9:22:17"
+    },
+    {
+      "id": "353096",
+      "title": "兄弟コンポーネントのstate連動をしたい",
+      "tags": [
+        "React.js",
+        "JavaScript"
+      ],
+      "recordDate": "2021-8-9 9:22:17"
+    },
+    {
+      "id": "337825",
+      "title": "WindowsにてPythonコード実行時に起こるSyntaxErrorについて",
+      "tags": [
+        "Windows 10",
+        "Unicode",
+        "Python 3.x"
+      ],
+      "recordDate": "2021-8-9 9:22:17"
+    },
+    {
+      "id": "297652",
+      "title": "Pythonでの正規化",
+      "tags": [
+        "Unicode",
+        "Django",
+        "CSV",
+        "Python"
+      ],
+      "recordDate": "2021-8-9 9:22:17"
+    },
+    {
+      "id": "353079",
+      "title": "javascript 比較演算子がよく理解できません。。。。",
+      "tags": [
+        "JavaScript"
+      ],
+      "recordDate": "2021-8-9 9:22:17"
+    },
+    {
+      "id": "328713",
+      "title": "Unicode文字の型変換エラー解消",
+      "tags": [
+        "文字コード",
+        "Win32 API",
+        "Unicode",
+        "Visual C++",
+        "C++"
+      ],
+      "recordDate": "2021-8-9 9:22:17"
+    },
+    {
+      "id": "350944",
+      "title": "オブジェクト指向言語でstaticを使う",
+      "tags": [
+        "オブジェクト指向",
+        "Java",
+        "C#"
+      ],
+      "recordDate": "2021-8-9 9:22:17"
+    },
+    {
+      "id": "353356",
+      "title": "アルバイトのシフト管理",
+      "tags": [
+        "Ruby on Rails",
+        "Ruby",
+        "JavaScript"
+      ],
+      "recordDate": "2021-8-9 9:22:17"
+    },
+    {
+      "id": "336741",
+      "title": "カプセル化が必要な理由がわからない",
+      "tags": [
+        "オブジェクト指向",
+        "オブジェクト"
+      ],
+      "recordDate": "2021-8-9 9:22:17"
+    },
+    {
+      "id": "331062",
+      "title": "オブジェクト指向の勉強の仕方について",
+      "tags": [
+        "ゲーム開発",
+        "オブジェクト指向",
+        "オブジェクト",
+        "JavaScript",
+        "Java"
+      ],
+      "recordDate": "2021-8-9 9:22:17"
+    },
+    {
+      "id": "279932",
+      "title": "決定木の出力　UnicodeDecodeError",
+      "tags": [
+        "Jupyter",
+        "機械学習",
+        "Unicode",
+        "Python"
+      ],
+      "recordDate": "2021-8-9 9:22:17"
+    },
+    {
+      "id": "329981",
+      "title": "python2におけるunicodeをstrに戻す",
+      "tags": [
+        "Unicode",
+        "Python"
+      ],
+      "recordDate": "2021-8-9 9:22:17"
+    },
+    {
+      "id": "353061",
+      "title": "フォルダごと文字コードを変換したい",
+      "tags": [
+        "ASCII",
+        "文字コード",
+        "UTF-8",
+        "Unicode"
+      ],
+      "recordDate": "2021-8-9 10:23:23"
+    }
+  ],
+  "mystockQ": [
+    {
+      "id": "61dc50f959933bcef01c",
+      "title": "【Python】【小ネタ】Unicode Sandwich(ユニコードサンドイッチ)とは",
+      "tags": [
+        "Python",
+        "unicode",
+        "Python3",
+        "EffectivePython"
+      ],
+      "recordDate": "2021-8-9 9:22:17"
+    },
+    {
+      "id": "fab1b778d9a98654b1f4",
+      "title": "「そうだ！インターフェースを作ろう！」と生まれて初めて思った日",
+      "tags": [
+        "C#",
+        "オブジェクト指向",
+        "Unity",
+        "インターフェース"
+      ],
+      "recordDate": "2021-8-9 9:22:17"
+    },
+    {
+      "id": "51dff6f081603ad5ddbc",
+      "title": "仕様変更に負けないでWeb版のTinderで自動スワイプする",
+      "tags": [
+        "JavaScript",
+        "tinder"
+      ],
+      "recordDate": "2021-8-9 9:22:17"
+    },
+    {
+      "id": "bfccd7500d72cc46507b",
+      "title": "【Python】クラス変数の取り扱いを確認する",
+      "tags": [
+        "Python"
+      ],
+      "recordDate": "2021-8-9 9:22:17"
+    },
+    {
+      "id": "4ae829ef632735e0ac26",
+      "title": "オブジェクト指向プログラミングとは",
+      "tags": [
+        "Python",
+        "オブジェクト指向",
+        "チーム開発",
+        "ソフトウェア開発",
+        "Readable-Code"
+      ],
+      "recordDate": "2021-8-9 9:22:17"
+    },
+    {
+      "id": "2e9506bea4ed97a1f742",
+      "title": "【LINE Messaging API＆Google Sheets API】プッシュ通知で週末に家計簿を通知",
+      "tags": [
+        "JavaScript",
+        "Node.js",
+        "GoogleSheetsAPI",
+        "linebot",
+        "LINEmessagingAPI"
+      ],
+      "recordDate": "2021-8-9 9:22:17"
+    },
+    {
+      "id": "efb9370a6c0e39d43289",
+      "title": "オリジナル文字コード（UTF-16, JIS8混在）からユニコード（UTF-16）へ変換する文字コード変換プログラムを作ってみました",
+      "tags": [
+        "C#",
+        "文字コード",
+        "unicode",
+        "サロゲートペア",
+        "JIS配列"
+      ],
+      "recordDate": "2021-8-9 9:22:17"
+    },
+    {
+      "id": "0e6614bc482ea89f7b3f",
+      "title": "ターミナルの Unicode 絵文字について",
+      "tags": [
+        "Terminal",
+        "unicode"
+      ],
+      "recordDate": "2021-8-9 9:22:17"
+    },
+    {
+      "id": "cb81cbf21aebc36ba642",
+      "title": "Unicodeの文字をサクッと UTF-8 に変換する",
+      "tags": [
+        "unicode"
+      ],
+      "recordDate": "2021-8-9 9:22:17"
+    },
+    {
+      "id": "8fad6fcb39a859554c9f",
+      "title": "\\377\\376hって何?",
+      "tags": [
+        "unicode",
+        "UTF-16"
+      ],
+      "recordDate": "2021-8-9 9:22:17"
+    },
+    {
+      "id": "554e95faf8749fac8631",
+      "title": "Node.jsからVOICEVOXを使ってみる。",
+      "tags": [
+        "JavaScript",
+        "Node.js",
+        "VOICEVOX"
+      ],
+      "recordDate": "2021-8-9 9:22:17"
+    },
+    {
+      "id": "96e19c2ff0695b325b7f",
+      "title": "ハンバーガーメニューをvanillaで",
+      "tags": [
+        "JavaScript"
+      ],
+      "recordDate": "2021-8-9 12:4:56"
+    },
+    {
+      "id": "9349740469ebc66c81d9",
+      "title": "初めてのJavaプログラミング　Java実行環境の準備（JDKのインストール）",
+      "tags": [
+        "Java",
+        "初心者"
+      ],
+      "recordDate": "2021-8-9 18:52:23"
+    }
+  ]
+}
