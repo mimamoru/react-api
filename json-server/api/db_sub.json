@@ -1,38 +1,43 @@
 {
   "mytags": [
     {
-      "id": "Unicode",
-      "recordDate": "2021-8-9 9:22:17"
-    },
-    {
-      "id": "JavaScript",
-      "recordDate": "2021-8-9 9:22:17"
-    },
-    {
       "id": "オブジェクト指向",
-      "recordDate": "2021-8-9 9:22:17"
-    },
-    {
-      "id": "Python",
       "recordDate": "2021-8-9 9:22:17"
     },
     {
       "id": "Java",
       "recordDate": "2021-8-9 9:22:17"
+    },
+    {
+      "id": "JavaScript",
+      "recordDate": "2021-8-9 14:48:32"
+    },
+    {
+      "id": "Node.js",
+      "recordDate": "2021-8-10 21:6:16"
+    },
+    {
+      "id": "CSS",
+      "recordDate": "2021-8-10 21:6:16"
+    },
+    {
+      "id": "HTML",
+      "recordDate": "2021-8-10 21:6:16"
+    },
+    {
+      "id": "Ruby",
+      "recordDate": "2021-8-10 21:6:16"
+    },
+    {
+      "id": "C",
+      "recordDate": "2021-8-10 21:6:16"
+    },
+    {
+      "id": "PHP",
+      "recordDate": "2021-8-10 21:6:16"
     }
   ],
   "mystockT": [
-    {
-      "id": "353061",
-      "title": "フォルダごと文字コードを変換したい",
-      "tags": [
-        "ASCII",
-        "文字コード",
-        "UTF-8",
-        "Unicode"
-      ],
-      "recordDate": "2021-8-9 9:22:17"
-    },
     {
       "id": "353393",
       "title": "CodePenで特定の動作の時のみ背景色を変えるには",
@@ -57,16 +62,6 @@
       "tags": [
         "React.js",
         "JavaScript"
-      ],
-      "recordDate": "2021-8-9 9:22:17"
-    },
-    {
-      "id": "337825",
-      "title": "WindowsにてPythonコード実行時に起こるSyntaxErrorについて",
-      "tags": [
-        "Windows 10",
-        "Unicode",
-        "Python 3.x"
       ],
       "recordDate": "2021-8-9 9:22:17"
     },
@@ -161,6 +156,17 @@
         "Python"
       ],
       "recordDate": "2021-8-9 9:22:17"
+    },
+    {
+      "id": "353061",
+      "title": "フォルダごと文字コードを変換したい",
+      "tags": [
+        "ASCII",
+        "文字コード",
+        "UTF-8",
+        "Unicode"
+      ],
+      "recordDate": "2021-8-9 10:23:23"
     }
   ],
   "mystockQ": [
@@ -274,6 +280,33 @@
         "VOICEVOX"
       ],
       "recordDate": "2021-8-9 9:22:17"
+    },
+    {
+      "id": "96e19c2ff0695b325b7f",
+      "title": "ハンバーガーメニューをvanillaで",
+      "tags": [
+        "JavaScript"
+      ],
+      "recordDate": "2021-8-9 12:4:56"
+    },
+    {
+      "id": "9349740469ebc66c81d9",
+      "title": "初めてのJavaプログラミング　Java実行環境の準備（JDKのインストール）",
+      "tags": [
+        "Java",
+        "初心者"
+      ],
+      "recordDate": "2021-8-9 18:52:23"
+    },
+    {
+      "id": "ea2abb83814e58454061",
+      "title": "node puppetterでwait系の処理を結構書いたので、メモ",
+      "tags": [
+        "JavaScript",
+        "Node.js",
+        "puppeteer"
+      ],
+      "recordDate": "2021-8-11 21:32:0"
     }
   ]
 }
