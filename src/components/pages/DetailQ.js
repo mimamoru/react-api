@@ -29,6 +29,9 @@ const useStyles = makeStyles({
   pos: {
     marginBottom: 12,
   },
+  button: {
+    textTransform: "none",
+  },
 });
 
 const _sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
@@ -154,16 +157,9 @@ const DetailQ = () => {
           </Typography>
         </CardContent>
       </Card>
-      <Typography
-        className={classes.root}
-        style={{ textAlign: "right", display: "inline-block" }}
-        color="textSecondary"
-      >
-        <a href={data && data.url} target="_blank" rel="noreferrer">
-          Website
-        </a>
-      </Typography>
-      <Typography className={classes.root} color="textSecondary" gutterBottom>
+      <br/>
+      <Typography className={classes.root} 
+     color="textSecondary" >
         <Button
           type="button"
           onClick={handleUpdate}
@@ -172,7 +168,20 @@ const DetailQ = () => {
         >
           戻る
         </Button>
+     
+        <Button
+        className={classes.button}
+          href={data && data.url}
+          target="_blank"
+          rel="noreferrer"
+          variant="outlined"
+          color="primary"
+          style={{ marginLeft:680}}
+        >
+          WebSite
+        </Button>
       </Typography>
+    <br/>
     </div>
   );
 };

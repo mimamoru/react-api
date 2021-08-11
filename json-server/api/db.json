@@ -9,16 +9,32 @@
       "recordDate": "2021-8-9 9:22:17"
     },
     {
-      "id": "オートコンプリート",
-      "recordDate": "2021-8-9 14:0:16"
-    },
-    {
       "id": "JavaScript",
       "recordDate": "2021-8-9 14:48:32"
     },
     {
-      "id": "React.js",
-      "recordDate": "2021-8-9 14:48:32"
+      "id": "Node.js",
+      "recordDate": "2021-8-10 21:6:16"
+    },
+    {
+      "id": "CSS",
+      "recordDate": "2021-8-10 21:6:16"
+    },
+    {
+      "id": "HTML",
+      "recordDate": "2021-8-10 21:6:16"
+    },
+    {
+      "id": "Ruby",
+      "recordDate": "2021-8-10 21:6:16"
+    },
+    {
+      "id": "C",
+      "recordDate": "2021-8-10 21:6:16"
+    },
+    {
+      "id": "PHP",
+      "recordDate": "2021-8-10 21:6:16"
     }
   ],
   "mystockT": [
@@ -46,16 +62,6 @@
       "tags": [
         "React.js",
         "JavaScript"
-      ],
-      "recordDate": "2021-8-9 9:22:17"
-    },
-    {
-      "id": "337825",
-      "title": "WindowsにてPythonコード実行時に起こるSyntaxErrorについて",
-      "tags": [
-        "Windows 10",
-        "Unicode",
-        "Python 3.x"
       ],
       "recordDate": "2021-8-9 9:22:17"
     },
@@ -291,6 +297,16 @@
         "初心者"
       ],
       "recordDate": "2021-8-9 18:52:23"
+    },
+    {
+      "id": "ea2abb83814e58454061",
+      "title": "node puppetterでwait系の処理を結構書いたので、メモ",
+      "tags": [
+        "JavaScript",
+        "Node.js",
+        "puppeteer"
+      ],
+      "recordDate": "2021-8-11 21:32:0"
     }
   ]
 }

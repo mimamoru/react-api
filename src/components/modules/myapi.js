@@ -5,51 +5,61 @@ const myTagsPath = "http://localhost:3001/mytags";
 const myStockTPath = "http://localhost:3001/mystockT";
 const myStockQPath = "http://localhost:3001/mystockQ";
 
-const token1 = "5fa6a260ae7b12113eecefa37ac32a972bedc288";
-const token2 = "e24cb72ab96bb0f5f108a610650321e9ded13989";
+const token1 = "";
+const token2 = "";
 
 //axios.defaults.withCredentials = true;
 
 //タグ一覧を取得(teratail API)
 export const getTagsData = async (page = 1) => {
-  const { data } = await axios.get(`${apiPath1}/tags?limit=20&page=${page}`, {
-    headers: {
-      Authorization: `Bearer ${token1}`,
-    },
-  });
+  const { data } = await axios.get(
+    `${apiPath1}/tags?limit=20&page=${page}`
+    // , {
+    //   headers: {
+    //     Authorization: `Bearer ${token1}`,
+    //   },
+    // }
+  );
   return data;
 };
 
 //指定タグを取得(teratail API)
 export const getTagData = async (tag_name) => {
-  const { data } = await axios.get(`${apiPath1}/tags/${tag_name}`, {
-    headers: {
-      Authorization: `Bearer ${token1}`,
-    },
-  });
+  const { data } = await axios.get(
+    `${apiPath1}/tags/${tag_name}`
+    // {
+    //   headers: {
+    //     Authorization: `Bearer ${token1}`,
+    //   },
+    // }
+  );
   return data;
 };
 
 //指定タグの質問を取得(teratail API)
 export const getQuestionsByTag = async (tag_name, page = 1) => {
   const { data } = await axios.get(
-    `${apiPath1}/tags/${tag_name}/questions?limit=10&page=${page}`,
-    {
-      headers: {
-        Authorization: `Bearer ${token1}`,
-      },
-    }
+    `${apiPath1}/tags/${tag_name}/questions?limit=10&page=${page}`
+    // ,
+    // {
+    //   headers: {
+    //     Authorization: `Bearer ${token1}`,
+    //   },
+    // }
   );
   return data;
 };
 
 //指定idの質問詳細とその回答を取得(teratail API)
 export const getQuestionById = async (question_id) => {
-  const { data } = await axios.get(`${apiPath1}/questions/${question_id}`, {
-    headers: {
-      Authorization: `Bearer ${token1}`,
-    },
-  });
+  const { data } = await axios.get(
+    `${apiPath1}/questions/${question_id}`
+    // , {
+    //   headers: {
+    //     Authorization: `Bearer ${token1}`,
+    //   },
+    // }
+  );
   return data;
 };
 
@@ -58,12 +68,13 @@ export const getQuestionById = async (question_id) => {
 export const getReportsByTag = async (tag_name, page = 1) => {
   // let totalCount;
   const { data } = await axios.get(
-    `${apiPath2}/tags/${tag_name}/items?page=${page}&per_page=10`,
-    {
-      headers: {
-        Authorization: `Bearer ${token2}`,
-      },
-    }
+    `${apiPath2}/tags/${tag_name}/items?page=${page}&per_page=10`
+    // ,
+    // {
+    //   headers: {
+    //     Authorization: `Bearer ${token2}`,
+    //   },
+    // }
   );
   //   .then(response => {
   //     totalCount = response.headers['Total-Count'];
@@ -73,11 +84,14 @@ export const getReportsByTag = async (tag_name, page = 1) => {
 
 //指定idの記事を取得(Qiita API)
 export const getReportById = async (itemId) => {
-  const { data } = await axios.get(`${apiPath2}/items/${itemId}`, {
-    headers: {
-      Authorization: `Bearer ${token2}`,
-    },
-  });
+  const { data } = await axios.get(
+    `${apiPath2}/items/${itemId}`
+    // , {
+    //   headers: {
+    //     Authorization: `Bearer ${token2}`,
+    //   },
+    // }
+  );
   return data;
 };
 

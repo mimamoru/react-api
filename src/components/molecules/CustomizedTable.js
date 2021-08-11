@@ -217,7 +217,11 @@ const CustomizedTable = ({
           component={Paper}
         >
           {valuesT[0] === false && <CircularIndeterminate component="span" />}
-          <Table className={classes.table} aria-label="simple table">
+          <Table
+            className={classes.table}
+            aria-label="simple table"
+            stickyHeader
+          >
             <TableHead>
               <TableRow>
                 {columnsT?.map((column) => (
@@ -286,7 +290,11 @@ const CustomizedTable = ({
           component={Paper}
         >
           {valuesQ[0] === false && <CircularIndeterminate component="span" />}
-          <Table className={classes.table} aria-label="simple table">
+          <Table
+            className={classes.table}
+            aria-label="simple table"
+            stickyHeader
+          >
             <TableHead>
               <TableRow>
                 {columnsQ?.map((column) => (

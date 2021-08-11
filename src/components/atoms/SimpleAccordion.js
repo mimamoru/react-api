@@ -6,7 +6,7 @@ import AccordionSummary from "@material-ui/core/AccordionSummary";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreRoundedIcon from "@material-ui/icons/ExpandMoreRounded";
-import Button from "@material-ui/core/Button";
+import IconButton from "@material-ui/core/IconButton";
 import QueueRoundedIcon from "@material-ui/icons/QueueRounded";
 
 const useStyles = makeStyles((theme) => ({
@@ -74,7 +74,17 @@ const SimpleAccordion = memo(({ tagName, explain, includes, setChipData }) => {
           id="panel1a-header"
         >
           <Typography className={classes.heading}>{tagName}</Typography>
-          <Button
+          <IconButton
+            id={`${tagName}_btn`}
+            className={classes.button}
+            onClick={() => handleSwitch(`${tagName}_btn`)}
+            type="submit"
+            color="primary"
+            component="span"
+          >
+            <QueueRoundedIcon />
+          </IconButton>
+          {/* <Button
             id={`${tagName}_btn`}
             className={classes.button}
             type="submit"
@@ -82,8 +92,8 @@ const SimpleAccordion = memo(({ tagName, explain, includes, setChipData }) => {
             variant="outlined"
             color="primary"
           >
-            <QueueRoundedIcon onClick={() => handleSwitch(`${tagName}_btn`)} />
-          </Button>
+           
+          </Button> */}
         </AccordionSummary>
         <AccordionDetails className={classes.details}>
           <Typography>{explain}</Typography>

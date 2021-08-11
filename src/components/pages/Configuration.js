@@ -266,8 +266,9 @@ const Configuration = () => {
           size="large"
           variant="contained"
           color="primary"
+          onClick={handleUpdate}
+          startIcon={<CheckCircleOutlineRoundedIcon />}
         >
-          <CheckCircleOutlineRoundedIcon onClick={handleUpdate} />
           MyTag更新
         </Button>
       </section>
@@ -288,8 +289,9 @@ const Configuration = () => {
             type="button"
             variant="contained"
             color="primary"
+            onClick={handleSearch}
+            startIcon={<SearchIcon />}
           >
-            <SearchIcon onClick={handleSearch} />
             Tag検索
           </Button>
           <p id="searchInput" className="error"></p>

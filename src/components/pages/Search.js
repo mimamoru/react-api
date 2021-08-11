@@ -173,6 +173,7 @@ const Search = () => {
         severity={snackbar.severity}
         message={snackbar.message}
       />
+      <br />
       <div id="result">
         <CustomizedTable
           columnsT={searchColumnsT}
