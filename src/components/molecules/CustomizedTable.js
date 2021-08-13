@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
 
 const limit = 10;
 
-//讀懃ｴ｢邨先棡縺ｨ縲√♀豌励↓蜈･繧贋ｸ隕ｧ繧定｡ｨ遉ｺ縺吶ｋ繝��繝悶Ν
+//検索結果と、お気に入り一覧を表示するテーブル
 const CustomizedTable = ({
   columnsT,
   columnsQ,
@@ -64,36 +64,37 @@ const CustomizedTable = ({
 }) => {
   const classes = useStyles();
 
-  //縺頑ｰ励↓蜈･繧頑ュ蝣ｱ繧貞叙蠕励☆繧�
+  //お気に入り情報を取得する
   const { data: mystockT } = useGetAllMyStockT();
   const { data: mystockQ } = useGetAllMyStockQ();
 
-  //MyTag荳隕ｧ繧貞叙蠕励☆繧�
-  const { data: myTags } = useGetMyTags(); //繧ｻ繝ｬ繧ｯ繝医�繝�け繧ｹ鬆�岼縺ｮ迥ｶ諷狗ｮ｡逅�
+  //MyTag一覧を取得する
+  const { data: myTags } = useGetMyTags();
 
+  //セレクトボックス項目の状態管理
   const [options, setOptions] = useState([]);
-  //繧ｻ繝ｬ繧ｯ繝医�繝�け繧ｹ驕ｸ謚槭�迥ｶ諷狗ｮ｡逅�
+  //セレクトボックス選択の状態管理
   const [select, setSelect] = useState(paramSelect ? [...paramSelect] : []);
 
-  //縺頑ｰ励↓蜈･繧願ｨ倅ｺ喫d縺ｮ迥ｶ諷狗ｮ｡逅�
+  //お気に入り記事idの状態管理
   const [favoriteT, setFavoriteT] = useState([]);
   const [favoriteQ, setFavoriteQ] = useState([]);
 
-  //繝��繝悶Ν陦後�迥ｶ諷狗ｮ｡逅�
+  //テーブル行の状態管理
   const [rowsT, setRowsT] = useState(valuesT && valuesT[0] ? [...valuesT] : []);
   const [rowsQ, setRowsQ] = useState(valuesQ && valuesQ[0] ? [...valuesQ] : []);
 
-  //繧ｿ繝悶�迥ｶ諷狗ｮ｡逅�
+  //タブの状態管理
   const [tabValue, setTabValue] = useState(paramTabValue);
 
-  //繧ｹ繝翫ャ繧ｯ繝舌�縺ｮ迥ｶ諷狗ｮ｡逅�
+  //スナックバーの状態管理
   const [snackbar, setSnackbar] = useState({
     open: false,
     severity: "",
     message: "",
   });
 
-  //繧ｹ繝翫ャ繧ｯ繝舌�繧帝哩縺倥ｋ蜃ｦ逅�
+  //スナックバーを閉じる処理
   const handleClose = (event, reason) => {
     if (reason === "clickaway") {
       return;
@@ -101,19 +102,19 @@ const CustomizedTable = ({
     setSnackbar({ ...snackbar, open: false });
   };
 
-  //繧ｿ繝悶�驕ｸ謚槫､画峩蜃ｦ逅�
+  //タブの選択変更処理
   const handleTabChange = (event, newValue) => {
     setTabValue(newValue);
   };
 
-  //繧ｻ繝ｬ繧ｯ繝医�繝�け繧ｹ縺ｮ荳ｭ霄ｫ繧定ｨｭ螳�
+  //セレクトボックスの中身を設定
   useEffect(() => {
     setOptions(
       myTags ? [...myTags.map((e) => ({ value: e.id, label: e.id }))] : []
     );
   }, [myTags]);
 
-  //縺頑ｰ励↓蜈･繧願ｨ倅ｺ喫d繧定ｨｭ螳�
+  //お気に入り記事idを設定
   useEffect(() => {
     setFavoriteT(mystockT ? [...mystockT.map((e) => e.id)] : []);
   }, [mystockT]);
@@ -122,7 +123,7 @@ const CustomizedTable = ({
     setFavoriteQ(mystockQ ? [...mystockQ.map((e) => e.id)] : []);
   }, [mystockQ]);
 
-  //繝��繝悶Ν陦後ｒ險ｭ螳�
+  //テーブル行を設定
   useEffect(() => {
     if (!valuesT) return;
     setRowsT([...valuesT]);
@@ -133,8 +134,8 @@ const CustomizedTable = ({
     setRowsQ([...valuesQ]);
   }, [valuesQ]);
 
-  //Tag縺ｮ邨槭ｊ霎ｼ縺ｿ縺ｫ蠢懊§縺ｦ繝��繝悶Ν陦ｨ遉ｺ繧貞､画峩縺吶ｋ
-  //窶ｻ繝壹�繧ｸ縺斐→縺ｮ邨槭ｊ霎ｼ縺ｿ縺励°縺ｧ縺阪↑縺�
+  //Tagの絞り込みに応じてテーブル表示を変更する
+  //※ページごとの絞り込みしかできない
   useEffect(() => {
     const film = select.map((e) => e.value.toLowerCase());
     if (film.length === 0) {
@@ -158,7 +159,7 @@ const CustomizedTable = ({
     }
   }, [select, valuesT, valuesQ]);
 
-  //繝��繧ｿ蜿門ｾ礼憾豕√↓蠢懊§縺ｦ繧ｹ繝翫ャ繧ｯ繝舌�繧定｡ｨ遉ｺ縺吶ｋ
+  //データ取得状況に応じてスナックバーを表示する
   useEffect(() => {
     if (!myTags) return;
     const message =
