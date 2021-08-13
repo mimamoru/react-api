@@ -157,9 +157,8 @@ const DetailQ = () => {
           </Typography>
         </CardContent>
       </Card>
-      <br/>
-      <Typography className={classes.root} 
-     color="textSecondary" >
+      <br />
+      <Typography className={classes.root} color="textSecondary">
         <Button
           type="button"
           onClick={handleUpdate}
@@ -168,20 +167,20 @@ const DetailQ = () => {
         >
           戻る
         </Button>
-     
+
         <Button
-        className={classes.button}
+          className={classes.button}
           href={data && data.url}
           target="_blank"
           rel="noreferrer"
           variant="outlined"
           color="primary"
-          style={{ marginLeft:680}}
+          style={{ marginLeft: 680 }}
         >
           WebSite
         </Button>
       </Typography>
-    <br/>
+      <br />
     </div>
   );
 };

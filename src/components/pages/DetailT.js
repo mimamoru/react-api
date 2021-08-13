@@ -97,13 +97,14 @@ const DetailT = () => {
   //ページが削除されている可能性を加味し、画面表示時にお気に入りの解除をする想定
   useEffect(() => {
     if (!isError) return;
-    const message = error?.response.status === 404 ? warningChange : err;
+    const status = error?.response.status;
+    const message = status === 400 || status === 404 ? warningChange : err;
     setSnackbar({
       open: true,
       severity: message === err ? "error" : "warning",
       message: message,
     });
-    if (message === err) handleBack();
+    //if (message === err) handleBack()
   }, [isError, error?.response.status, handleBack]);
 
   //戻るボタン押下時にお気に入り情報を更新する

@@ -9,8 +9,8 @@ const useStyles = makeStyles((theme) => ({
   root: {
     position: "relative",
     backgroundImage: `url(${mainimg})`,
-    height: "800px",
-    backgroundSize: "1700px auto",
+    height: "1200px",
+    backgroundSize: "100% auto",
   },
   button: {
     position: "absolute",
