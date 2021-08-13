@@ -260,7 +260,7 @@ const CustomizedTable = ({
                           select={select}
                           isStock={isStock}
                         >
-                          隧ｳ邏ｰ
+                          詳細
                         </DetailButton>
                       </TableCell>
                       {columnsT?.map((column, idx) => (
@@ -334,7 +334,7 @@ const CustomizedTable = ({
                           select={select}
                           isStock={isStock}
                         >
-                          隧ｳ邏ｰ
+                          詳細
                         </DetailButton>
                       </TableCell>
                       {columnsQ?.map((column, idx) => (

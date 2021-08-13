@@ -7,7 +7,9 @@ export const warningMyTag = "MyTagを登録してください";
 export const warningChange = "ページが削除または移動された可能性があります";
 
 export const err = "エラーが発生しました";
+export const accessErr =
+  "アクセス回数の上限を超えました。/n時間をおいてアクセスしてください。";
 
 export const confirmUpdate =
-  "更新元のデータが最新ではないため、正しく更新されない可能性があります。処理を実行しますか。";
+  "更新元のデータが最新ではないため、正しく更新されない可能性があります。/n処理を実行しますか。";
 export const confirmBack = "更新していない内容は削除されます。よろしいですか。";

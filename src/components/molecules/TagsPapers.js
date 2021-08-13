@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 
 import Pagination from "@material-ui/lab/Pagination";
 
-import { err } from "../modules/messages";
+import { err, accessErr } from "../modules/messages";
 import { useGetTags } from "../queryhooks/index";
 
 import CircularIndeterminate from "../atoms/CircularIndeterminate";
@@ -20,7 +20,7 @@ const TagsPapers = memo(({ chipData, setChipData }) => {
   const [page, setPage] = useState(1);
 
   //指定ページのタグ情報取得
-  const { isLoading, isError, data } = useGetTags(page);
+  const { isLoading, isError, error, data } = useGetTags(page);
 
   //全ページ数の状態管理
   const [allPages, setAllPages] = useState(1);
@@ -56,9 +56,11 @@ const TagsPapers = memo(({ chipData, setChipData }) => {
   //エラー発生時
   useEffect(() => {
     if (!isError) return;
-    setSnackbar({ open: true, severity: "error", message: err });
+    const status = error?.response.status;
+    const message = status === 403 ? accessErr : err;
+    setSnackbar({ open: true, severity: "error", message: message });
     handleBack();
-  }, [isError, handleBack]);
+  }, [isError, error?.response.status, handleBack]);
 
   return (
     <div>

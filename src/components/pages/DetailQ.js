@@ -12,7 +12,7 @@ import {
   useDeleteMyStockQ,
   usePostMyStockQ,
 } from "../queryhooks/index";
-import { err, warningChange } from "../modules/messages";
+import { err, accessErr, warningChange } from "../modules/messages";
 import SwitchLabel from "../atoms/SwitchLabel";
 import CustomizedSnackbars from "../atoms/CustomizedSnackbars";
 import CircularIndeterminate from "../atoms/CircularIndeterminate";
@@ -89,13 +89,15 @@ const DetailQ = () => {
   //ページが削除されている可能性を加味し、画面表示時にお気に入りの解除をする想定
   useEffect(() => {
     if (!isError) return;
-    const message = error?.response.status === 404 ? warningChange : err;
+    const status = error?.response.status;
+    const message =
+      status === 404 ? warningChange : status === 403 ? accessErr : err;
     setSnackbar({
       open: true,
-      severity: message === err ? "error" : "warning",
+      severity: message === warningChange ? "warning" : "error",
       message: message,
     });
-    if (message === err) handleBack();
+    if (message !== warningChange) handleBack();
   }, [isError, error?.response.status, handleBack]);
 
   //戻るボタン押下時にお気に入り情報を更新する

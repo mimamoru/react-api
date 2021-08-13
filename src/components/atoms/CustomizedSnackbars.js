@@ -29,7 +29,9 @@ const CustomizedSnackbars = memo(({ open, handleClose, severity, message }) => {
         onClose={handleClose}
       >
         <Alert onClose={handleClose} severity={severity}>
-          {message}
+          {message?.split("/n").map((e, idx) => (
+            <div key={idx}>{e}</div>
+          ))}
         </Alert>
       </Snackbar>
     </div>

@@ -1,7 +1,7 @@
 import { React, useState, useEffect, memo, useCallback } from "react";
 import { useHistory } from "react-router-dom";
 
-import { err, warningNodata } from "../modules/messages";
+import { err, accessErr, warningNodata } from "../modules/messages";
 import { useGetTag } from "../queryhooks/index";
 
 import CircularIndeterminate from "../atoms/CircularIndeterminate";
@@ -41,9 +41,15 @@ const TagPaper = memo(({ tagName, chipData, setChipData }) => {
   //検索に合致するタグが存在しない場合は警告を表示する
   useEffect(() => {
     if (!isError) return;
-    const message = error?.response.status === 404 ? warningNodata : err;
-    setSnackbar({ open: true, severity: "warning", message: message });
-    if (message === err) handleBack();
+    const status = error?.response.status;
+    const message =
+      status === 404 ? warningNodata : status === 403 ? accessErr : err;
+    setSnackbar({
+      open: true,
+      severity: message === warningNodata ? "warning" : "error",
+      message: message,
+    });
+    if (message !== warningNodata) handleBack();
   }, [isError, error?.response.status, handleBack]);
 
   return (

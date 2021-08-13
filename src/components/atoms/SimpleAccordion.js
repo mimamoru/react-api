@@ -13,6 +13,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     width: 265,
     display: "inline-block",
+    verticalAlign: "middle",
     margin: theme.spacing(0.5),
   },
   accordion: {
@@ -26,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
     position: "absolute",
     display: "inline-block",
     width: 260,
-    top: 55,
+    top: 70,
     zIndex: 100,
     backgroundColor: "white",
   },
@@ -39,10 +40,9 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: theme.typography.fontWeightRegular,
   },
   button: {
-    zIndex: 1,
+    zIndex: 10,
     pointerEvents: "visible",
-    width: 15,
-    height: 30,
+    margin: theme.spacing(0.3),
   },
 }));
 
@@ -57,12 +57,13 @@ const SimpleAccordion = memo(({ tagName, explain, includes, setChipData }) => {
   }, [includes, tagName]);
 
   //お気に入り追加・削除の画面制御
-  const handleSwitch = () => {
+  const handleSwitch = (event) => {
     if (includes) {
       setChipData((chips) => chips.filter((chip) => chip !== tagName));
     } else {
       setChipData((chips) => [...chips, tagName]);
     }
+    event.stopPropagation();
   };
 
   return (
@@ -77,23 +78,13 @@ const SimpleAccordion = memo(({ tagName, explain, includes, setChipData }) => {
           <IconButton
             id={`${tagName}_btn`}
             className={classes.button}
-            onClick={() => handleSwitch(`${tagName}_btn`)}
+            onClick={(event) => handleSwitch(event)}
             type="submit"
             color="primary"
             component="span"
           >
             <QueueRoundedIcon />
           </IconButton>
-          {/* <Button
-            id={`${tagName}_btn`}
-            className={classes.button}
-            type="submit"
-            size="small"
-            variant="outlined"
-            color="primary"
-          >
-           
-          </Button> */}
         </AccordionSummary>
         <AccordionDetails className={classes.details}>
           <Typography>{explain}</Typography>

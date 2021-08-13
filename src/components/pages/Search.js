@@ -11,7 +11,7 @@ import CustomizedSnackbars from "../atoms/CustomizedSnackbars";
 import CustomizedTable from "../molecules/CustomizedTable";
 import GenericTemplate from "../molecules/GenericTemplate";
 
-import { err } from "../modules/messages";
+import { err, accessErr } from "../modules/messages";
 
 const limit = 10;
 
@@ -44,12 +44,12 @@ const isReady = (obj) => {
 
 //teratail API から取得したデータを整える(形式・重複の排除)
 const makeDataT = (obj) => {
-  const list = obj
-    .filter((e) => e.status === "success")
-    .reduce((pre, current) => {
-      pre.push(...current.data?.questions);
-      return pre;
-    }, []);
+  const arr = obj?.filter((e) => e.status === "success");
+  if (arr.length <= 1) return arr;
+  const list = arr?.reduce((pre, current) => {
+    pre.push(...current.data?.questions);
+    return pre;
+  }, []);
   const data = list.filter(
     (element, index, self) =>
       self.findIndex((e) => e.id === element.id) === index
@@ -151,18 +151,26 @@ const Search = () => {
     history.push("/");
   }, [history]);
 
-  //指定データが存在しない場合は警告とする
-  //その他のエラーの場合はホーム画面に遷移する
+  //エラーの場合はホーム画面に遷移する
   useEffect(() => {
     if (
+      QuestionsData.every(
+        (e) => !e.isError || e.error?.response.status === 404
+      ) &&
+      ReportsData.every((e) => !e.isError || e.error?.response.status === 404)
+    )
+      return;
+    if (
       QuestionsData.some(
-        (e) => e.isError && e.error?.response.status !== 404
+        (e) => !e.isError && e.error?.response.status !== 403
       ) ||
-      ReportsData.some((e) => e.isError && e.error?.response.status !== 404)
+      ReportsData.some((e) => !e.isError && e.error?.response.status !== 403)
     ) {
+      setSnackbar({ open: true, severity: "error", message: accessErr });
+    } else {
       setSnackbar({ open: true, severity: "error", message: err });
-      handleHomeBack();
     }
+    handleHomeBack();
   }, [QuestionsData, ReportsData, handleHomeBack]);
 
   return (
