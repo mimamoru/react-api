@@ -1,4 +1,4 @@
-import { React, useState, useEffect, useCallback } from "react";
+import { React, useState, useEffect, useCallback, useRef } from "react";
 import { useLocation, useHistory } from "react-router-dom";
 
 import { makeStyles } from "@material-ui/core/styles";
@@ -55,7 +55,7 @@ const DetailQ = () => {
   const postMyStockMutation = usePostMyStockQ();
 
   //お気に入り情報の状態管理
-  const [stock, setStock] = useState(favorite);
+  const stockSwitchRef = useRef(null);
 
   //スナックバーの状態管理
   const [snackbar, setSnackbar] = useState({
@@ -103,6 +103,7 @@ const DetailQ = () => {
   //戻るボタン押下時にお気に入り情報を更新する
   const handleUpdate = () => {
     //トグルボタンのON・OFFが変更された場合は更新処理を行う
+    const stock = stockSwitchRef.current.checked;
     if (favorite !== stock) {
       if (stock) {
         const newStock = {
@@ -141,7 +142,7 @@ const DetailQ = () => {
           <Typography variant="h5" component="h2">
             Qiita
           </Typography>
-          <SwitchLabel stock={stock} setStock={setStock} />
+          <SwitchLabel favorite={favorite} inputRef={stockSwitchRef} />
           <Typography variant="h5" component="h2">
             {data && data.title}
           </Typography>
