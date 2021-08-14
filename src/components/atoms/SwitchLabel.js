@@ -5,7 +5,7 @@ import { messageAddStock, messageRemoveStock } from "../modules/messages";
 import CustomizedSnackbars from "./CustomizedSnackbars";
 
 //ストック用トグルボタン
-const SwitchLabel = React.forwardRef(({ favorite, inputRef }) => {
+const SwitchLabel = React.forwardRef(({ favorite }, ref) => {
   //お気に入り情報の状態管理
   const [stock, setStock] = useState(favorite);
 
@@ -53,7 +53,7 @@ const SwitchLabel = React.forwardRef(({ favorite, inputRef }) => {
           <Switch
             checked={stock}
             onChange={handleChange}
-            inputRef={inputRef}
+            inputRef={ref}
             name="stock"
             color="primary"
           />

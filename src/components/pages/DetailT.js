@@ -153,7 +153,7 @@ const DetailT = () => {
         <CardContent>
           <Typography variant="h5" component="h2">
             teratail
-            <SwitchLabel favorite={favorite} inputRef={stockSwitchRef} />
+            <SwitchLabel favorite={favorite} ref={stockSwitchRef} />
           </Typography>
 
           <Typography variant="h5" component="h2">

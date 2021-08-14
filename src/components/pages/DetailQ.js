@@ -142,7 +142,7 @@ const DetailQ = () => {
           <Typography variant="h5" component="h2">
             Qiita
           </Typography>
-          <SwitchLabel favorite={favorite} inputRef={stockSwitchRef} />
+          <SwitchLabel favorite={favorite} ref={stockSwitchRef} />
           <Typography variant="h5" component="h2">
             {data && data.title}
           </Typography>
