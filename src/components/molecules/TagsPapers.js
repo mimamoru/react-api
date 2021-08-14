@@ -13,7 +13,7 @@ import CustomizedSnackbars from "../atoms/CustomizedSnackbars";
 const _sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 //MyTag設定画面のタグ(一覧表示)
-const TagsPapers = memo(({ chipData, setChipData }) => {
+const TagsPapers = memo(() => {
   const history = useHistory();
 
   //閲覧ページの状態管理
@@ -78,8 +78,6 @@ const TagsPapers = memo(({ chipData, setChipData }) => {
             key={elm.tag_name}
             tagName={elm.tag_name}
             explain={elm.explain}
-            includes={chipData?.includes(elm.tag_name)}
-            setChipData={setChipData}
           />
         ))}
       </div>

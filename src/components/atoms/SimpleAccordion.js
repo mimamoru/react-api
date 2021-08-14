@@ -1,4 +1,4 @@
-import { React, memo, useEffect } from "react";
+import { React, memo, useEffect, useContext } from "react";
 
 import { makeStyles } from "@material-ui/core/styles";
 import Accordion from "@material-ui/core/Accordion";
@@ -8,6 +8,8 @@ import Typography from "@material-ui/core/Typography";
 import ExpandMoreRoundedIcon from "@material-ui/icons/ExpandMoreRounded";
 import IconButton from "@material-ui/core/IconButton";
 import QueueRoundedIcon from "@material-ui/icons/QueueRounded";
+
+import { ChipContext } from "../pages/Configuration";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -47,19 +49,22 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 //MyTag設定画面のタグ情報表示用パネル
-const SimpleAccordion = memo(({ tagName, explain, includes, setChipData }) => {
+const SimpleAccordion = memo(({ tagName, explain }) => {
   const classes = useStyles();
+
+  //コンテキストからチップの情報を取チップの情報を取得
+  const { chipData, setChipData } = useContext(ChipContext);
 
   //すでにMyTagに登録済みのTagの色を変更
   useEffect(() => {
-    const color = includes ? "rgb(176, 224, 230)" : "white";
+    const color = chipData?.includes(tagName) ? "rgb(176, 224, 230)" : "white";
     document.getElementById(`${tagName}_btn`).style.backgroundColor = color;
-  }, [includes, tagName]);
+  }, [chipData, tagName]);
 
   //お気に入り追加・削除の画面制御
   const handleSwitch = (event) => {
-    if (includes) {
-      setChipData((chips) => chips.filter((chip) => chip !== tagName));
+    if (chipData?.includes(tagName)) {
+      setChipData((chips) => [...chips.filter((chip) => chip !== tagName)]);
     } else {
       setChipData((chips) => [...chips, tagName]);
     }

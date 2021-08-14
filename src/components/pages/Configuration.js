@@ -1,4 +1,4 @@
-import { React, useState, useEffect, useRef, useCallback } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import { useHistory } from "react-router-dom";
 
 import { BaseYup } from "../modules/localeJP";
@@ -65,6 +65,9 @@ const makeChips = (data) => {
 const handleChange = (id) => {
   document.getElementById(id).innerHTML = "";
 };
+
+//コンテキストの生成
+export const ChipContext = React.createContext();
 
 //MyTag設定ページ
 const Configuration = () => {
@@ -297,16 +300,9 @@ const Configuration = () => {
             Tag検索
           </Button>
           <p id="searchInput" className="error"></p>
-
-          {tagName ? (
-            <TagPaper
-              tagName={tagName}
-              chipData={chipData}
-              setChipData={setChipData}
-            />
-          ) : (
-            <TagsPapers chipData={chipData} setChipData={setChipData} />
-          )}
+          <ChipContext.Provider value={{ chipData, setChipData }}>
+            {tagName ? <TagPaper tagName={tagName} /> : <TagsPapers />}
+          </ChipContext.Provider>
         </section>
       </div>
       <br />
