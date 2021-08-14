@@ -11,13 +11,13 @@ import Search from "./components/pages/Search";
 import Stock from "./components/pages/Stock";
 import Home from "./components/pages/Home";
 
-// Create a client
+// アクセストークンを利用する場合は、staleTimeを指定するとよい
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
       retry: false,
       refetchOnWindowFocus: false,
-      staleTime: 300000,
+      staleTime: Infinity,
     },
   },
 });
@@ -35,7 +35,7 @@ function App() {
           <Route path="/configuration" component={Configuration} exact />
         </Switch>
       </BrowserRouter>
-      <ReactQueryDevtools initialIsOpen={true} />
+      {/* <ReactQueryDevtools initialIsOpen={true} /> */}
     </QueryClientProvider>
   );
 }
