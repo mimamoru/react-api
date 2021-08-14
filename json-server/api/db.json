@@ -1,40 +1,24 @@
 {
   "mytags": [
     {
-      "id": "オブジェクト指向",
-      "recordDate": "2021-8-9 9:22:17"
+      "id": "Python",
+      "recordDate": "2021-8-14 9:32:33"
     },
     {
-      "id": "Java",
-      "recordDate": "2021-8-9 9:22:17"
+      "id": "lighttpd",
+      "recordDate": "2021-8-14 9:55:33"
     },
     {
-      "id": "JavaScript",
-      "recordDate": "2021-8-9 14:48:32"
+      "id": "IIS",
+      "recordDate": "2021-8-14 9:57:11"
     },
     {
-      "id": "Node.js",
-      "recordDate": "2021-8-10 21:6:16"
+      "id": "Zope",
+      "recordDate": "2021-8-14 9:55:33"
     },
     {
-      "id": "CSS",
-      "recordDate": "2021-8-10 21:6:16"
-    },
-    {
-      "id": "HTML",
-      "recordDate": "2021-8-10 21:6:16"
-    },
-    {
-      "id": "Ruby",
-      "recordDate": "2021-8-10 21:6:16"
-    },
-    {
-      "id": "C",
-      "recordDate": "2021-8-10 21:6:16"
-    },
-    {
-      "id": "PHP",
-      "recordDate": "2021-8-10 21:6:16"
+      "id": "ActionScript",
+      "recordDate": "2021-8-14 9:55:33"
     }
   ],
   "mystockT": [
@@ -167,6 +151,28 @@
         "Unicode"
       ],
       "recordDate": "2021-8-9 10:23:23"
+    },
+    {
+      "id": "353627",
+      "title": "オブジェクトと関数の違いについて",
+      "tags": [
+        "関数",
+        "オブジェクト指向",
+        "オブジェクト"
+      ],
+      "recordDate": "2021-8-14 9:32:33"
+    },
+    {
+      "id": "352434",
+      "title": "Arraylistとstaticの使い方について",
+      "tags": [
+        "オブジェクト指向",
+        "オブジェクト",
+        "import",
+        "ArrayList",
+        "Java"
+      ],
+      "recordDate": "2021-8-14 9:32:33"
     }
   ],
   "mystockQ": [
@@ -280,14 +286,6 @@
         "VOICEVOX"
       ],
       "recordDate": "2021-8-9 9:22:17"
-    },
-    {
-      "id": "96e19c2ff0695b325b7f",
-      "title": "ハンバーガーメニューをvanillaで",
-      "tags": [
-        "JavaScript"
-      ],
-      "recordDate": "2021-8-9 12:4:56"
     },
     {
       "id": "9349740469ebc66c81d9",

@@ -36,7 +36,10 @@ const _sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 const isReady = (obj) => {
   let ready =
     !obj ||
-    obj.some((e) => e.status !== "success" && e.error?.response.status !== 404)
+    obj.some(
+      (e) => e.status !== "success" && e.error?.response.status !== 404
+    ) ||
+    obj.some((e) => e.status !== "success" && e.error?.response.status === 403)
       ? false
       : true;
   return ready;

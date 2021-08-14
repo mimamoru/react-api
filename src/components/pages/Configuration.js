@@ -146,7 +146,7 @@ const Configuration = () => {
     const myTags = makeChips(myTagsData);
     //差分を算出し、登録・削除を行う
     const diff = findDiff(myTags, chipData);
-    console.log(diff);
+
     for (let id of diff.adds) {
       const ad = {
         id: id,

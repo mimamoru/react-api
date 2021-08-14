@@ -6,18 +6,18 @@ const usePostMyTags = () => {
   const queryClient = useQueryClient();
 
   return useMutation((data) => postData("myTags", data), {
-    onMutate: async (newTodo) => {
+    onMutate: async (newData) => {
       await queryClient.cancelQueries("myTags");
       const previousTodos = queryClient.getQueryData("myTags");
-      queryClient.setQueryData("myTags", (old) => [...old, newTodo]);
+      queryClient.setQueryData("myTags", (old) => [...old, newData]);
       return { previousTodos };
     },
 
-    onError: (err, newTodo, context) => {
+    onError: (err, newData, context) => {
       queryClient.setQueryData("myTags", context.previousTodos);
     },
 
-    onSettled: () => {
+    onSuccess: () => {
       queryClient.invalidateQueries("myTags");
     },
   });
