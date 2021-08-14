@@ -47,12 +47,14 @@ const isReady = (obj) => {
 
 //teratail API から取得したデータを整える(形式・重複の排除)
 const makeDataT = (obj) => {
-  const arr = obj?.filter((e) => e.status === "success");
-  if (arr.length <= 1) return arr;
-  const list = arr?.reduce((pre, current) => {
-    pre.push(...current.data?.questions);
-    return pre;
-  }, []);
+  const list = obj
+    ?.filter((e) => e.status === "success")
+    .reduce((pre, current) => {
+      const question = current.data?.questions;
+      if (!question) return pre;
+      pre.push(...question);
+      return pre;
+    }, []);
   const data = list.filter(
     (element, index, self) =>
       self.findIndex((e) => e.id === element.id) === index
@@ -72,9 +74,11 @@ const calcPageT = (obj) => {
 //Qiita API から取得したデータを整える(形式・重複の排除)
 const makeDataQ = (obj) => {
   const list = obj
-    .filter((e) => e.status === "success")
+    ?.filter((e) => e.status === "success")
     .reduce((pre, current) => {
-      pre.push(...current.data);
+      const report = current.data;
+      if (!report) return pre;
+      pre.push(...report);
       return pre;
     }, []);
   const data = list.filter(

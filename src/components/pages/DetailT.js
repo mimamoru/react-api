@@ -57,6 +57,7 @@ const DetailT = () => {
   const postMyStockMutation = usePostMyStockT();
 
   //お気に入り情報の状態管理
+
   const [stock, setStock] = useState(favorite);
 
   //スナックバーの状態管理

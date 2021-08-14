@@ -5,7 +5,7 @@ import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 
 //確認ダイアログ
-const ConfirmDialog = ({ msg, isOpen, doYes, doNo }) => {
+const ConfirmDialog = memo(({ msg, isOpen, doYes, doNo }) => {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -35,6 +35,6 @@ const ConfirmDialog = ({ msg, isOpen, doYes, doNo }) => {
       </Dialog>
     </div>
   );
-};
+});
 
 export default ConfirmDialog;
