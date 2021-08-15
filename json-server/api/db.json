@@ -1,24 +1,40 @@
 {
   "mytags": [
     {
+      "id": "オブジェクト指向",
+      "recordDate": "2021-8-9 9:22:17"
+    },
+    {
       "id": "Java",
       "recordDate": "2021-8-9 9:22:17"
     },
     {
-      "id": "lighttpd",
-      "recordDate": "2021-8-15 17:12:11"
+      "id": "JavaScript",
+      "recordDate": "2021-8-9 14:48:32"
     },
     {
-      "id": "IIS",
-      "recordDate": "2021-8-15 17:16:18"
+      "id": "Node.js",
+      "recordDate": "2021-8-10 21:6:16"
     },
     {
-      "id": "ActionScript",
-      "recordDate": "2021-8-15 17:16:18"
+      "id": "CSS",
+      "recordDate": "2021-8-10 21:6:16"
     },
     {
-      "id": "Delphi",
-      "recordDate": "2021-8-15 17:16:18"
+      "id": "HTML",
+      "recordDate": "2021-8-10 21:6:16"
+    },
+    {
+      "id": "Ruby",
+      "recordDate": "2021-8-10 21:6:16"
+    },
+    {
+      "id": "C",
+      "recordDate": "2021-8-10 21:6:16"
+    },
+    {
+      "id": "PHP",
+      "recordDate": "2021-8-10 21:6:16"
     }
   ],
   "mystockT": [
@@ -154,6 +170,17 @@
     }
   ],
   "mystockQ": [
+    {
+      "id": "61dc50f959933bcef01c",
+      "title": "【Python】【小ネタ】Unicode Sandwich(ユニコードサンドイッチ)とは",
+      "tags": [
+        "Python",
+        "unicode",
+        "Python3",
+        "EffectivePython"
+      ],
+      "recordDate": "2021-8-9 9:22:17"
+    },
     {
       "id": "fab1b778d9a98654b1f4",
       "title": "「そうだ！インターフェースを作ろう！」と生まれて初めて思った日",
