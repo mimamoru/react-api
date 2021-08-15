@@ -2,7 +2,7 @@ import { React, memo } from "react";
 import { useHistory } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 
-//詳細ボタン 
+//詳細ボタン
 const DetailButton = memo(
   ({ id, favorite, type, pageT, pageQ, select, isStock }) => {
     const history = useHistory();

@@ -66,7 +66,7 @@ const handleChange = (id) => {
   document.getElementById(id).innerHTML = "";
 };
 
-//コンテキストの生成
+// Contextオブジェクトを作成し、exportする
 export const ChipContext = React.createContext();
 
 //MyTag設定ページ
@@ -102,12 +102,15 @@ const Configuration = () => {
   });
 
   //スナックバーを閉じる処理
-  const handleClose = (event, reason) => {
-    if (reason === "clickaway") {
-      return;
-    }
-    setSnackbar({ ...snackbar, open: false });
-  };
+  const handleClose = useCallback(
+    (event, reason) => {
+      if (reason === "clickaway") {
+        return;
+      }
+      setSnackbar({ ...snackbar, open: false });
+    },
+    [snackbar]
+  );
 
   //MyTag情報の設定
   useEffect(() => {
@@ -192,11 +195,6 @@ const Configuration = () => {
     );
   };
 
-  //戻る処理
-  const executeBack = () => {
-    history.goBack();
-  };
-
   //戻るボタン押下時の処理
   const handleBack = () => {
     const myTags = makeChips(myTagsData);
@@ -241,7 +239,7 @@ const Configuration = () => {
       <ConfirmDialog
         msg={confirmBack}
         isOpen={confDlg === "back"}
-        doYes={executeBack}
+        doYes={() => history.goBack()}
         doNo={() => {
           setConfDlg("");
         }}

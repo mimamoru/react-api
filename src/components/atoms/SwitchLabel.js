@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Switch from "@material-ui/core/Switch";
 import { messageAddStock, messageRemoveStock } from "../modules/messages";
@@ -15,12 +15,16 @@ const SwitchLabel = React.forwardRef(({ favorite }, ref) => {
     message: "",
   });
 
-  const handleClose = (event, reason) => {
-    if (reason === "clickaway") {
-      return;
-    }
-    setSnackbar({ ...snackbar, open: false });
-  };
+  //スナックバーを閉じる処理
+  const handleClose = useCallback(
+    (event, reason) => {
+      if (reason === "clickaway") {
+        return;
+      }
+      setSnackbar({ ...snackbar, open: false });
+    },
+    [snackbar]
+  );
 
   //ボタンのON/OFFに応じて画面にフィードバックをする
   const handleChange = () => {

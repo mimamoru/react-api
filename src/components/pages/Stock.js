@@ -55,12 +55,15 @@ const Stock = () => {
   });
 
   //スナックバーを閉じる処理
-  const handleClose = (event, reason) => {
-    if (reason === "clickaway") {
-      return;
-    }
-    setSnackbar({ ...snackbar, open: false });
-  };
+  const handleClose = useCallback(
+    (event, reason) => {
+      if (reason === "clickaway") {
+        return;
+      }
+      setSnackbar({ ...snackbar, open: false });
+    },
+    [snackbar]
+  );
 
   //戻る処理
   const handleHomeBack = useCallback(async () => {

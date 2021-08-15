@@ -65,12 +65,15 @@ const DetailQ = () => {
   });
 
   //スナックバーを閉じる処理
-  const handleClose = (event, reason) => {
-    if (reason === "clickaway") {
-      return;
-    }
-    setSnackbar({ ...snackbar, open: false });
-  };
+  const handleClose = useCallback(
+    (event, reason) => {
+      if (reason === "clickaway") {
+        return;
+      }
+      setSnackbar({ ...snackbar, open: false });
+    },
+    [snackbar]
+  );
 
   //html形式の本文を挿入
   useEffect(() => {

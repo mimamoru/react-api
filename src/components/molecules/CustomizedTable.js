@@ -1,4 +1,4 @@
-import { React, useState, useEffect } from "react";
+import { React, useState, useEffect, useCallback } from "react";
 
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
@@ -95,12 +95,15 @@ const CustomizedTable = ({
   });
 
   //スナックバーを閉じる処理
-  const handleClose = (event, reason) => {
-    if (reason === "clickaway") {
-      return;
-    }
-    setSnackbar({ ...snackbar, open: false });
-  };
+  const handleClose = useCallback(
+    (event, reason) => {
+      if (reason === "clickaway") {
+        return;
+      }
+      setSnackbar({ ...snackbar, open: false });
+    },
+    [snackbar]
+  );
 
   //タブの選択変更処理
   const handleTabChange = (event, newValue) => {
@@ -309,7 +312,6 @@ const CustomizedTable = ({
                 ))}
               </TableRow>
             </TableHead>
-
             <TableBody>
               {rowsQ?.map(
                 (row) =>

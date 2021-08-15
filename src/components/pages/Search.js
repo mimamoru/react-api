@@ -55,10 +55,12 @@ const makeDataT = (obj) => {
       pre.push(...question);
       return pre;
     }, []);
-  const data = list.filter(
-    (element, index, self) =>
-      self.findIndex((e) => e.id === element.id) === index
-  );
+  const data = list
+    .filter((e) => e.title && e.title.trim().length > 0)
+    .filter(
+      (element, index, self) =>
+        self.findIndex((e) => e.id === element.id) === index
+    );
   return data;
 };
 
@@ -138,12 +140,15 @@ const Search = () => {
   });
 
   //スナックバーを閉じる処理
-  const handleClose = (event, reason) => {
-    if (reason === "clickaway") {
-      return;
-    }
-    setSnackbar({ ...snackbar, open: false });
-  };
+  const handleClose = useCallback(
+    (event, reason) => {
+      if (reason === "clickaway") {
+        return;
+      }
+      setSnackbar({ ...snackbar, open: false });
+    },
+    [snackbar]
+  );
 
   //teratailタブの全ページ数の設定
   useEffect(() => {
